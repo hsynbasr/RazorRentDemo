@@ -15,6 +15,7 @@ namespace RazorRentDemo.Data
         }
 
         public DbSet<Car> Car { get; set; } = default!;
+        public DbSet<Reservation> Reservations{ get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

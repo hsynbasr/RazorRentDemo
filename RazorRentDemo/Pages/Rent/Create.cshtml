@@ -1,0 +1,42 @@
+﻿@page
+@model RazorRentDemo.Pages.Rent.CreateModel
+
+@{
+    ViewData["Title"] = "Make Rez";
+}
+
+<h4>Make rez</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input asp-for="CarId" value="@Model.Car.Id" hidden/>  @*value get ile car id ile geliyor*@
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary my-3" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <ul>
+            <li> @Model.Car.Brand </li>
+            <li> @Model.Car.UnitPrice </li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-danger " asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
