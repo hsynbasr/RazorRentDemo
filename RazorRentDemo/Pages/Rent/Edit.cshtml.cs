@@ -65,7 +65,7 @@ namespace RazorRentDemo.Pages.Rent
                     throw;
                 }
             }
-
+            
             return RedirectToPage("./Index");
         }
 

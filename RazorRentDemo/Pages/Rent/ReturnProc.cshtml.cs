@@ -47,7 +47,7 @@ namespace RazorRentDemo.Pages.Rent
 
                 _context.Reservations.Update(res);
                 _context.SaveChanges();
-
+               
                 return RedirectToPage("index", new { res.TotalPrice });
             }
 

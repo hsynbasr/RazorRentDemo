@@ -65,7 +65,7 @@ namespace RazorRentDemo.Pages.Garage
                     throw;
                 }
             }
-
+            TempData["succes"] = "Update succesfully";
             return RedirectToPage("./Index");
         }
 
